@@ -6,9 +6,5 @@ services:
     ports:
       - "80:80"
     restart: always
-
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./certbot:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+    environment:
+      - NODE_ENV=production

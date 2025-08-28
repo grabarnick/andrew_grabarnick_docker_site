@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Linkedin, Mail, Calendar, Sparkles, Code2, Rocket, LineChart } from "lucide-react";
 
 // —— Replace with your actual Calendly link ——
-const calendlyUrl = "https://calendly.com/andrey-grabarnick/30min";
+const calendlyUrl = "https://calendly.com/grabarnick/30min";
 // —— Optionally host your resume alongside the site build ——
 const resumeUrl = "/Resume_Andrey_Grabarnick_DevTools.pdf";
 
