@@ -117,17 +117,17 @@ export default function Site() {
             <motion.p variants={item} className="mt-5 text-base md:text-lg text-zinc-600 max-w-3xl">
             I lead the strategic development of AI-driven platforms and products, combining hands-on execution with a vision of the future to help developers and businesses adapt to an evolving reality.
             </motion.p>
-            <motion.div variants={item} className="mt-8 flex items-center justify-start gap-3">
-              <button onClick={openCalendly} className="inline-flex items-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm hover:bg-zinc-800">
+            <motion.div variants={item} className="mt-8 grid grid-cols-2 gap-3 md:flex md:items-center">
+              <button onClick={openCalendly} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm hover:bg-zinc-800">
                 <Calendar className="h-4 w-4" /> Schedule Consultation
               </button>
-              <a href={resumeUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+              <a href={resumeUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
               <ArrowRight className="h-4 w-4" /> View CV
               </a>
-              <a href={linkedinUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+              <a href={linkedinUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
               <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
-              <a href={emailUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+              <a href={emailUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
               <Mail className="h-4 w-4" /> Email
               </a>                            
             </motion.div>
