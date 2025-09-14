@@ -101,7 +101,7 @@ export default function Site() {
               variants={item}
               src="/andrew_grabarnick.jpg"
               alt="Andrew Grabarnick"
-              className="h-21 w-21 md:h-39 md:w-39 rounded-full object-cover border border-zinc-200 shadow-sm mb-4"
+              className="h-24 w-24 md:h-32 md:w-32 rounded-full object-cover border border-zinc-200 shadow-sm mb-4"
             />
             <motion.h1 variants={item} className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
               Hey, I'm Andrew Grabarnick AI Product leader and transformation architect
