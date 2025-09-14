@@ -99,9 +99,9 @@ export default function Site() {
           <motion.div variants={container} initial="hidden" animate="show" className="text-left">
             <motion.img
               variants={item}
-              src="https://media.licdn.com/dms/image/v2/C5603AQGQSM-1UqWc4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1574710944739?e=1760572800&v=beta&t=5nG7t4cszqY6PzZLx8DjrdukvjAn7C3i7ZAgsnm8HgU"
+              src="/andrew_grabarnick.jpg"
               alt="Andrew Grabarnick"
-              className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border border-zinc-200 shadow-sm mb-4"
+              className="h-21 w-21 md:h-39 md:w-39 rounded-full object-cover border border-zinc-200 shadow-sm mb-4"
             />
             <motion.h1 variants={item} className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
               Hey, I'm Andrew Grabarnick AI Product leader and transformation architect
