@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, Linkedin, Mail, Calendar, Sparkles, Code2, Rocket, LineChart } from "lucide-react";
 
 // —— Replace with your actual Calendly link ——
-const calendlyUrl = "https://calendly.com/andrey-grabarnick/30min";
+const calendlyUrl = "https://calendly.com/grabarnick/30min";
 // —— Optionally host your resume alongside the site build ——
-const resumeUrl = "/Resume_Andrey_Grabarnick_DevTools.pdf";
+const resumeUrl = "https://grabarnick.notion.site/Andrew-Grabarnick-CV-25e821657fb580b9b895c8a692abfeb8";
+const linkedinUrl = "https://www.linkedin.com/in/andrey-grabarnick";
+const emailUrl = "mailto:agrabarnick@gmail.com";
 
 const container = {
   hidden: { opacity: 0 },
@@ -22,10 +24,10 @@ const item = {
 
 function SectionHeading({ title, subtitle }) {
   return (
-    <div className="mb-10 text-center">
+    <div className="mb-10">
       <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">{title}</h2>
       {subtitle && (
-        <p className="mt-3 text-base text-zinc-500 max-w-2xl mx-auto">{subtitle}</p>
+        <p className="mt-3 text-base text-zinc-500 max-w-2xl">{subtitle}</p>
       )}
     </div>
   );
@@ -41,14 +43,14 @@ function Card({ children, className = "" }) {
 
 function Stat({ value, label }) {
   return (
-    <div className="text-center">
+    <div className="text-left">
       <div className="text-3xl font-semibold tracking-tight">{value}</div>
       <div className="mt-1 text-sm text-zinc-500">{label}</div>
     </div>
   );
 }
 
-function Project({ title, tag, description, bullets }) {
+function Project({ title, tag, description, bullets, link }) {
   return (
     <Card className="p-6">
       <div className="flex items-center justify-between gap-2">
@@ -63,6 +65,11 @@ function Project({ title, tag, description, bullets }) {
           <li key={i}>{b}</li>
         ))}
       </ul>
+      {link && (
+        <a href={link} className="inline-flex items-center mt-4 gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+          <ArrowRight className="h-4 w-4" /> View Project
+        </a>
+      )}
     </Card>
   );
 }
@@ -76,7 +83,7 @@ export default function Site() {
     <div className="min-h-screen bg-gradient-to-b from-white to-zinc-50 text-zinc-900">
       {/* Nav */}
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-zinc-100">
-        <nav className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+        <nav className="max-w-4xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-xl bg-black text-white grid place-items-center font-semibold">AG</div>
             <span className="hidden sm:block text-sm text-zinc-600">Andrew Grabarnick</span>
@@ -95,36 +102,49 @@ export default function Site() {
       {/* Hero */}
       <section className="relative">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(0,0,0,0.05),transparent)]" />
-        <div className="max-w-7xl mx-auto px-4 md:px-6 pt-16 pb-10">
-          <motion.div variants={container} initial="hidden" animate="show" className="text-center">
-            <motion.h1 variants={item} className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
-              Building Developer Platforms & AI Tools
+        <div className="max-w-4xl mx-auto px-4 md:px-6 pt-16 pb-10">
+          <motion.div variants={container} initial="hidden" animate="show" className="text-left">
+            <motion.img
+              variants={item}
+              src="https://media.licdn.com/dms/image/v2/C5603AQGQSM-1UqWc4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1574710944739?e=1760572800&v=beta&t=5nG7t4cszqY6PzZLx8DjrdukvjAn7C3i7ZAgsnm8HgU"
+              alt="Andrew Grabarnick"
+              className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border border-zinc-200 shadow-sm mb-4"
+            />
+            <motion.h1 variants={item} className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+              Hey, I'm Andrew Grabarnick.<br /> 
+              AI Product leader and transformation architect
             </motion.h1>
-            <motion.p variants={item} className="mt-5 text-base md:text-lg text-zinc-600 max-w-3xl mx-auto">
-              Product leader and AI transformation architect. I design developer experiences—DSLs, SDKs, APIs and agent frameworks—that help engineers ship faster and smarter.
+            <motion.p variants={item} className="mt-5 text-base md:text-lg text-zinc-600 max-w-3xl">
+            I lead the strategic development of AI-driven platforms and products, combining hands-on execution with a vision of the future to help developers and businesses adapt to an evolving reality.
             </motion.p>
-            <motion.div variants={item} className="mt-8 flex items-center justify-center gap-3">
-              <a href={resumeUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
-                <ArrowRight className="h-4 w-4" /> View Resume
-              </a>
+            <motion.div variants={item} className="mt-8 flex items-center justify-start gap-3">
               <button onClick={openCalendly} className="inline-flex items-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm hover:bg-zinc-800">
                 <Calendar className="h-4 w-4" /> Schedule Consultation
               </button>
+              <a href={resumeUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+              <ArrowRight className="h-4 w-4" /> View CV
+              </a>
+              <a href={linkedinUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+              <Linkedin className="h-4 w-4" /> LinkedIn
+              </a>
+              <a href={emailUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+              <Mail className="h-4 w-4" /> Email
+              </a>                            
             </motion.div>
-            <motion.div variants={item} className="mt-10 grid grid-cols-3 md:grid-cols-6 gap-6 max-w-3xl mx-auto">
-              <Stat value="60+" label="Team Led" />
+            <motion.div variants={item} className="mt-10 grid grid-cols-3 md:grid-cols-6 gap-6 max-w-3xl">
+              <Stat value="140+" label="Team Led" />
               <Stat value="30%" label="YoY Growth" />
-              <Stat value="$50k+" label="MRR Built" />
+              <Stat value="$5M+" label="YRR Built" />
               <Stat value="6" label="Products Managed" />
               <Stat value="4" label="Cloud Envs" />
-              <Stat value="10+ yrs" label="Dev Tools & AI" />
+              <Stat value="10+ yrs" label="Dev, Design & AI" />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Expertise */}
-      <section id="expertise" className="max-w-7xl mx-auto px-4 md:px-6 py-16">
+      <section id="expertise" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
         <SectionHeading title="Expertise" subtitle="Developer platforms, LLM systems and product strategy" />
         <div className="grid md:grid-cols-3 gap-6">
           <Card className="p-6">
@@ -159,7 +179,7 @@ export default function Site() {
             <p className="mt-3 text-sm text-zinc-600">Vision, roadmap, pricing, GTM. Leading cross‑functional teams to scalable outcomes.</p>
             <ul className="mt-4 space-y-2 text-sm list-disc pl-5 text-zinc-700">
               <li>30% YoY revenue growth across portfolio</li>
-              <li>60+ cross‑functional team leadership</li>
+              <li>140+ cross‑functional team leadership</li>
               <li>Analytics, experimentation, JTBD</li>
             </ul>
           </Card>
@@ -167,34 +187,36 @@ export default function Site() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="max-w-7xl mx-auto px-4 md:px-6 py-16">
+      <section id="projects" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
         <SectionHeading title="Featured Projects" subtitle="A selection of developer-facing platforms and tools" />
         <div className="grid md:grid-cols-2 gap-6">
           <Project
+            title="Just AI Agent Platform"
+            tag="2025 • LLM Agent Framework • Modular Runtime"
+            description="Developer platform and framework to compose domain‑specific AI agents with interchangeable modules (tools, memory, policies). Supports cloud and on‑prem LLMs, enterprise RAG and secure integrations."
+            bullets={[
+              "Multi‑model strategy (OpenAI, Anthropic, LLaMA, Qwen)",
+              "Catalog of ready‑made agent blocks with customization",
+              "AI Dev Assistant to scaffold agent projects automatically",
+            ]}
+            link="http://just-ai.com/agent-platform"
+          />
+          <Project
             title="Just AI Conversational Platform (JAICP)"
-            tag="Developer Platform • DSL • SDK • CI/CD"
+            tag="$5M+ YRR • Developer Platform • DSL • SDK • CI/CD"
             description="Platform for engineers to build, test and deploy conversational agents at enterprise scale. Proprietary DSL with code-first workflows, SDKs, APIs, analytics and release management."
             bullets={[
               "Designed DX: from project scaffolding to CI/CD and on‑prem releases",
               "Advanced workspace, roles & administration for large orgs",
               "Enterprise analytics and observability for conversation quality",
             ]}
-          />
-          <Project
-            title="Agents Platform"
-            tag="LLM Agent Framework • Modular Runtime"
-            description="Developer framework to compose domain‑specific AI agents with interchangeable modules (tools, memory, policies). Supports cloud and on‑prem LLMs, enterprise RAG and secure integrations."
-            bullets={[
-              "Multi‑model strategy (OpenAI, Anthropic, LLaMA, Qwen)",
-              "Catalog of ready‑made agent blocks with customization",
-              "AI Dev Assistant to scaffold agent projects automatically",
-            ]}
-          />
+            link="http://just-ai.com/jaicp"
+          />          
           <Project
             title="HUB48"
             tag="$50k+ MRR • B2B Automation"
             description="Scaled B2B communication automation platform for the US market. Led product from 0 → $50k+ MRR with 100+ corporate clients."
-            bullets={["Architected user platform & analytics dashboard", "Lead scoring and qualification system", "Integrated with enterprise automation stack"]}
+            bullets={["Architected user platform & analytics dashboard", "Lead scoring and qualification system", "Integrated with enterprise automation stack"]}            
           />
           <Project
             title="AI Voice Prompter"
@@ -206,7 +228,7 @@ export default function Site() {
       </section>
 
       {/* About */}
-      <section id="about" className="max-w-5xl mx-auto px-4 md:px-6 py-16">
+      <section id="about" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
         <Card className="p-8">
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-2">
@@ -257,7 +279,7 @@ export default function Site() {
       </section>
 
       {/* CTA / Calendly */}
-      <section className="max-w-5xl mx-auto px-4 md:px-6 pb-20">
+      <section className="max-w-4xl mx-auto px-4 md:px-6 pb-20">
         <Card className="p-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1">
@@ -281,7 +303,7 @@ export default function Site() {
 
       {/* Footer */}
       <footer className="border-t border-zinc-100 bg-white/60">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-zinc-500">© {new Date().getFullYear()} Andrew Grabarnick</div>
           <div className="flex items-center gap-3">
             <a href="https://www.linkedin.com/in/andrey-grabarnick" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-3 py-1.5 text-sm hover:bg-zinc-50"><Linkedin className="h-4 w-4" /> LinkedIn</a>
