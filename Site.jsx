@@ -227,6 +227,35 @@ export default function Site() {
         </div>
       </section>
 
+      {/* Clients */}
+      <section id="clients" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
+        <SectionHeading title="Clients" subtitle="Selected brands and institutions I've worked with" />
+        <Card className="p-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+            {[
+              "BNP Paribas Cardif",
+              "Philip Morris International",
+              "Burger King",
+              "Tele2",
+              "Richmond & Wandsworth",
+              "Royal Institute of Navigation",
+              "Dodo Pizza",
+              "Kodland",
+              "Jardim Exótico",
+              "Alpha Bank",
+              "Sovcombank",
+            ].map((client) => (
+              <div
+                key={client}
+                className="text-center rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-800 hover:bg-zinc-50"
+              >
+                {client}
+              </div>
+            ))}
+          </div>
+        </Card>
+      </section>
+
       {/* About */}
       <section id="about" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
         <Card className="p-8">
@@ -284,7 +313,7 @@ export default function Site() {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1">
               <h3 className="text-2xl font-semibold tracking-tight">Let's talk</h3>
-              <p className="mt-2 text-zinc-600">Book a 30‑minute consultation. We'll discuss strategy, AI architecture, and the shortest path to value.</p>
+              <p className="mt-2 text-zinc-600">Book a 30‑minute meeting. We'll discuss strategy, AI architecture, and the shortest path to value.</p>
               <div className="mt-4 flex items-center gap-3">
                 <button onClick={openCalendly} className="inline-flex items-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm hover:bg-zinc-800">
                   <Calendar className="h-4 w-4" /> Open Calendly
