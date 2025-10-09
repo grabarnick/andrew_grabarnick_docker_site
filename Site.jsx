@@ -112,10 +112,10 @@ export default function Site() {
             />
             <motion.h1 variants={item} className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
               Hey, I'm Andrew Grabarnick.<br /> 
-              AI Product leader and transformation architect
+              Product Leader at the forefront of AI innovation.
             </motion.h1>
             <motion.p variants={item} className="mt-5 text-base md:text-lg text-zinc-600 max-w-3xl">
-            I lead the strategic development of AI-driven platforms and products, combining hands-on execution with a vision of the future to help developers and businesses adapt to an evolving reality.
+            I build enterprise-grade developer and business tools. For over 10 years, our products have powered automation for major companies across Europe, Russia, and the CIS.
             </motion.p>
             <motion.div variants={item} className="mt-8 grid grid-cols-2 gap-3 md:flex md:items-center">
               <button onClick={openCalendly} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm hover:bg-zinc-800">
@@ -152,10 +152,10 @@ export default function Site() {
               <div className="p-2 rounded-xl bg-zinc-100"><Code2 className="h-5 w-5" /></div>
               <h3 className="font-semibold">Developer Platforms</h3>
             </div>
-            <p className="mt-3 text-sm text-zinc-600">DSLs, SDKs, APIs, testing tools, CI/CD, extensions, analytics and DX improvements.</p>
+            <p className="mt-3 text-sm text-zinc-600">AI-agents, DSLs, SDKs, APIs, testing tools, CI/CD, extensions, analytics and DX improvements.</p>
             <ul className="mt-4 space-y-2 text-sm list-disc pl-5 text-zinc-700">
-              <li>JAICP — conversational AI platform (DSL, SDK, CI/CD)</li>
-              <li>Agents Platform — LLM agent framework & modular runtime</li>
+            <li>Agents Platform — AI-agents builder & modular runtime</li>
+              <li>JAICP — conversational AI platform (DSL, SDK, CI/CD)</li>              
               <li>API management & extension systems</li>
             </ul>
           </Card>
