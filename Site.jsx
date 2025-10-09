@@ -228,7 +228,7 @@ export default function Site() {
       </section>
 
       {/* Clients */}
-      <section id="clients" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
+      {/* <section id="clients" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
         <SectionHeading title="Clients" subtitle="Selected brands and institutions I've worked with" />
         <Card className="p-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
@@ -254,7 +254,7 @@ export default function Site() {
             ))}
           </div>
         </Card>
-      </section>
+      </section> */}
 
       {/* About */}
       <section id="about" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
