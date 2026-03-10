@@ -67,7 +67,7 @@ function Project({ title, tag, description, bullets, link }) {
       </ul>
       {link && (
         <a href={link} className="inline-flex items-center mt-4 gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
-          <ArrowRight className="h-4 w-4" /> View Project
+          <ArrowRight className="h-4 w-4" /> Go to Product
         </a>
       )}
     </Card>
@@ -89,7 +89,7 @@ export default function Site() {
             <span className="hidden sm:block text-sm text-zinc-600">Andrew Grabarnick</span>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
-            <a href="#projects" className="text-sm text-zinc-600 hover:text-zinc-900 px-2 py-1 rounded-lg">Projects</a>
+            <a href="#experience" className="text-sm text-zinc-600 hover:text-zinc-900 px-2 py-1 rounded-lg">Experience</a>
             <a href="#expertise" className="text-sm text-zinc-600 hover:text-zinc-900 px-2 py-1 rounded-lg">Expertise</a>
             <a href="#about" className="text-sm text-zinc-600 hover:text-zinc-900 px-2 py-1 rounded-lg">About</a>
             <button onClick={openCalendly} className="inline-flex items-center gap-2 rounded-xl bg-black text-white text-sm px-3 py-2 hover:bg-zinc-800">
@@ -111,35 +111,97 @@ export default function Site() {
               className="h-24 w-24 md:h-32 md:w-32 rounded-full object-cover border border-zinc-200 shadow-sm mb-4"
             />
             <motion.h1 variants={item} className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
-              Hey, I'm Andrew Grabarnick.<br /> 
+              Hey, I'm Andrew Grabarnick.<br />
               Product Leader at the forefront of AI innovation.
             </motion.h1>
             <motion.p variants={item} className="mt-5 text-base md:text-lg text-zinc-600 max-w-3xl">
-            I build enterprise-grade developer and business tools. For over 10 years, our products have powered automation for major companies across Europe, Russia, and the CIS.
+              I build enterprise-grade automation tools and solutions. For over 10 years, our products have powered automation for major companies across Europe, Russia, and the CIS.
             </motion.p>
             <motion.div variants={item} className="mt-8 grid grid-cols-2 gap-3 md:flex md:items-center">
               <button onClick={openCalendly} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm hover:bg-zinc-800">
                 <Calendar className="h-4 w-4" /> Schedule Consultation
               </button>
               <a href={resumeUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
-              <ArrowRight className="h-4 w-4" /> View CV
+                <ArrowRight className="h-4 w-4" /> View CV
               </a>
               <a href={linkedinUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
-              <Linkedin className="h-4 w-4" /> LinkedIn
+                <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
               <a href={emailUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
-              <Mail className="h-4 w-4" /> Email
-              </a>                            
+                <Mail className="h-4 w-4" /> Email
+              </a>
             </motion.div>
             <motion.div variants={item} className="mt-10 grid grid-cols-3 md:grid-cols-6 gap-6 max-w-3xl">
+              <Stat value="10+ yrs" label="Dev, Design & AI" />
               <Stat value="140+" label="Team Led" />
-              <Stat value="30%" label="YoY Growth" />
-              <Stat value="$5M+" label="YRR Built" />
               <Stat value="6" label="Products Managed" />
               <Stat value="4" label="Cloud Envs" />
-              <Stat value="10+ yrs" label="Dev, Design & AI" />
+              <Stat value="30%" label="YoY Growth" />
+              <Stat value="$5M+" label="YRR Built" />
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
+        <SectionHeading title="Experience" subtitle="Products, projects, clients and success stories" />
+        <div className="grid md:grid-cols-2 gap-6">
+          <Project
+            title="Stractik AI"
+            tag="2026 • Agentic Driven Decision Intelligence"
+            description="A multi-agent autonomous system designed to transform unstructured institutional knowledge into actionable business decisions using a graph-based RAG architecture."
+            bullets={[
+              "Engineered a 0-to-1 solution to automate complex, non-linear business workflows",
+              "Agentic Business Automation",
+              "Built a production-ready stack (TypeScript, Node.js, React, Docker) with a focus on modularity and rapid deployment",
+            ]}
+
+            link="https://stractik.com"
+          />
+          <Project
+            title="Just AI Agent Platform"
+            tag="2025 • Agent Developer Platform • Modular Runtime"
+            description="Developer platform to compose domain‑specific AI agents with interchangeable modules (tools, memory, policies). Supports cloud and on‑prem LLMs, enterprise RAG and secure integrations."
+            bullets={[
+              "Multi‑model strategy (OpenAI, Anthropic, LLaMA, Qwen)",
+              "Catalog of ready‑made agent blocks with customization",
+              "AI Dev Assistant to scaffold agent projects automatically",
+            ]}
+            link="https://just-ai.com/agent-platform"
+          />
+          <Project
+            title="Just AI Conversational Platform (JAICP)"
+            tag="$5M+ YRR • Developer Platform • DSL • SDK • CI/CD"
+            description="Platform for engineers to build, test and deploy conversational agents at enterprise scale. Proprietary DSL with code-first workflows, SDKs, APIs, analytics and release management."
+            bullets={[
+              "Designed DX: from project scaffolding to CI/CD and on‑prem releases",
+              "Advanced workspace, roles & administration for large orgs",
+              "Enterprise analytics and observability for conversation quality",
+            ]}
+            link="https://just-ai.com/jaicp"
+          />
+          <Project
+            title="AI Voice Prompter"
+            tag="AI Tooling • Voice"
+            description="Tooling for voice‑first prompting and agent orchestration in enterprise scenarios."
+            bullets={["Shipped as part of product suite", "Adoption via developer teams", "Improved productivity in support & ops"]}
+            link="https://just-ai.com/ai-souffler"
+          />
+
+          <Project
+            title="HUB48"
+            tag="$50k+ MRR • B2B Automation"
+            description="Scaled B2B communication automation platform for the US market. Led product from 0 → $50k+ MRR with 100+ corporate clients."
+            bullets={["Architected user platform & analytics dashboard", "Lead scoring and qualification system", "Integrated with enterprise automation stack"]}
+          />
+          <Project
+            title="Maryand"
+            tag="$10k+ MRR • Premium Leather Goods Brand"
+            description="Created and scaled a premium leather goods brand from concept to profitable business."
+            bullets={["Built full-cycle manufacturing process from scratch, including workshop setup and quality control", "Developed efficient production management system and integrated CRM solutions", "Built scalable business processes for sustainable growth"]}
+          />
+
         </div>
       </section>
 
@@ -147,18 +209,6 @@ export default function Site() {
       <section id="expertise" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
         <SectionHeading title="Expertise" subtitle="Developer platforms, LLM systems and product strategy" />
         <div className="grid md:grid-cols-3 gap-6">
-          <Card className="p-6">
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-zinc-100"><Code2 className="h-5 w-5" /></div>
-              <h3 className="font-semibold">Developer Platforms</h3>
-            </div>
-            <p className="mt-3 text-sm text-zinc-600">AI-agents, DSLs, SDKs, APIs, testing tools, CI/CD, extensions, analytics and DX improvements.</p>
-            <ul className="mt-4 space-y-2 text-sm list-disc pl-5 text-zinc-700">
-            <li>Agents Platform — AI-agents builder & modular runtime</li>
-              <li>JAICP — conversational AI platform (DSL, SDK, CI/CD)</li>              
-              <li>API management & extension systems</li>
-            </ul>
-          </Card>
           <Card className="p-6">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-xl bg-zinc-100"><Sparkles className="h-5 w-5" /></div>
@@ -169,6 +219,18 @@ export default function Site() {
               <li>Multi-model deployment (cloud + on‑prem)</li>
               <li>Enterprise RAG & knowledge routing</li>
               <li>Agent frameworks for Banking, HR, Insurance</li>
+            </ul>
+          </Card>
+          <Card className="p-6">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-zinc-100"><Code2 className="h-5 w-5" /></div>
+              <h3 className="font-semibold">Developer Platforms</h3>
+            </div>
+            <p className="mt-3 text-sm text-zinc-600">AI-agents, DSLs, SDKs, APIs, testing tools, CI/CD, extensions, analytics and DX improvements.</p>
+            <ul className="mt-4 space-y-2 text-sm list-disc pl-5 text-zinc-700">
+              <li>Agents Platform — AI-agents builder & modular runtime</li>
+              <li>JAICP — conversational AI platform (DSL, SDK, CI/CD)</li>
+              <li>API management & extension systems</li>
             </ul>
           </Card>
           <Card className="p-6">
@@ -186,49 +248,8 @@ export default function Site() {
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
-        <SectionHeading title="Featured Projects" subtitle="A selection of developer-facing platforms and tools" />
-        <div className="grid md:grid-cols-2 gap-6">
-          <Project
-            title="Just AI Agent Platform"
-            tag="2025 • LLM Agent Framework • Modular Runtime"
-            description="Developer platform and framework to compose domain‑specific AI agents with interchangeable modules (tools, memory, policies). Supports cloud and on‑prem LLMs, enterprise RAG and secure integrations."
-            bullets={[
-              "Multi‑model strategy (OpenAI, Anthropic, LLaMA, Qwen)",
-              "Catalog of ready‑made agent blocks with customization",
-              "AI Dev Assistant to scaffold agent projects automatically",
-            ]}
-            link="http://just-ai.com/agent-platform"
-          />
-          <Project
-            title="Just AI Conversational Platform (JAICP)"
-            tag="$5M+ YRR • Developer Platform • DSL • SDK • CI/CD"
-            description="Platform for engineers to build, test and deploy conversational agents at enterprise scale. Proprietary DSL with code-first workflows, SDKs, APIs, analytics and release management."
-            bullets={[
-              "Designed DX: from project scaffolding to CI/CD and on‑prem releases",
-              "Advanced workspace, roles & administration for large orgs",
-              "Enterprise analytics and observability for conversation quality",
-            ]}
-            link="http://just-ai.com/jaicp"
-          />          
-          <Project
-            title="HUB48"
-            tag="$50k+ MRR • B2B Automation"
-            description="Scaled B2B communication automation platform for the US market. Led product from 0 → $50k+ MRR with 100+ corporate clients."
-            bullets={["Architected user platform & analytics dashboard", "Lead scoring and qualification system", "Integrated with enterprise automation stack"]}            
-          />
-          <Project
-            title="AI Voice Prompter"
-            tag="AI Tooling • Voice"
-            description="Tooling for voice‑first prompting and agent orchestration in enterprise scenarios."
-            bullets={["Shipped as part of product suite", "Adoption via developer teams", "Improved productivity in support & ops"]}
-          />
-        </div>
-      </section>
-
       {/* Clients */}
-      {/* <section id="clients" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
+      <section id="clients" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
         <SectionHeading title="Clients" subtitle="Selected brands and institutions I've worked with" />
         <Card className="p-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
@@ -254,7 +275,7 @@ export default function Site() {
             ))}
           </div>
         </Card>
-      </section> */}
+      </section>
 
       {/* About */}
       <section id="about" className="max-w-4xl mx-auto px-4 md:px-6 py-16">
