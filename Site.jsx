@@ -150,7 +150,7 @@ export default function Site() {
           <Project
             title="Stractik AI"
             tag="2026 • Agentic Driven Decision Intelligence"
-            description="A multi-agent autonomous system designed to transform unstructured institutional knowledge into actionable business decisions using a graph-based RAG architecture."
+            description="Founder & Lead Engineer of multi-agent autonomous system designed to transform unstructured institutional knowledge into actionable business decisions using a graph-based RAG architecture."
             bullets={[
               "Engineered a 0-to-1 solution to automate complex, non-linear business workflows",
               "Agentic Business Automation",
@@ -290,7 +290,7 @@ export default function Site() {
                 <li>Head of AI Products @ Just AI</li>
                 <li>Previously founder → scaled to $50k+ MRR</li>
                 <li>6 products portfolio • 4 cloud envs • on‑prem</li>
-                <li>English 🇬🇧 (full professional), Russian 🇷🇺 (native)</li>
+                <li>English 🇬🇧 (professional), Russian 🇷🇺 (native)</li>
               </ul>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a href={resumeUrl} className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
@@ -319,7 +319,7 @@ export default function Site() {
                 <ul className="mt-3 space-y-2 text-sm text-zinc-800">
                   <li>OpenAI, Anthropic, LLaMA, Qwen</li>
                   <li>TypeScript, Node.js, Python</li>
-                  <li>Postgres, MongoDB</li>
+                  <li>Postgres, MongoDB, ClickHouse</li>
                   <li>Cloud & On‑prem orchestration</li>
                 </ul>
               </div>
