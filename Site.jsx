@@ -5,7 +5,7 @@ import { ArrowRight, Linkedin, Mail, Calendar, Sparkles, Code2, Rocket, LineChar
 // —— Replace with your actual Calendly link ——
 const calendlyUrl = "https://calendly.com/grabarnick/30min";
 // —— Optionally host your resume alongside the site build ——
-const resumeUrl = "https://grabarnick.notion.site/Andrew-Grabarnick-CV-25e821657fb580b9b895c8a692abfeb8";
+const resumeUrl = "/Andrew_Grabarnick_CV_Mar-2026.pdf";
 const linkedinUrl = "https://www.linkedin.com/in/andrey-grabarnick";
 const emailUrl = "mailto:agrabarnick@gmail.com";
 
