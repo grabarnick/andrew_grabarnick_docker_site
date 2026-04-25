@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Mail, Calendar, Sparkles, Code2, Rocket, LineChart } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, Calendar, Sparkles, Code2, Rocket, LineChart, Github } from "lucide-react";
 
 // —— Replace with your actual Calendly link ——
 const calendlyUrl = "https://calendly.com/grabarnick/30min";
 // —— Optionally host your resume alongside the site build ——
-const resumeUrl = "/andrew-grabarnick-cv-mar-2026.pdf";
+const resumeUrl = "/andrew-grabarnick-cv-apr-2026.pdf";
 const linkedinUrl = "https://www.linkedin.com/in/andrey-grabarnick";
+const githubUrl = "https://github.com/grabarnick";
 const emailUrl = "mailto:agrabarnick@gmail.com";
 
 const container = {
@@ -119,13 +120,16 @@ export default function Site() {
             </motion.p>
             <motion.div variants={item} className="mt-8 grid grid-cols-2 gap-3 md:flex md:items-center">
               <button onClick={openCalendly} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm hover:bg-zinc-800">
-                <Calendar className="h-4 w-4" /> Schedule Consultation
+                <Calendar className="h-4 w-4" /> Book a Call
               </button>
               <a href={resumeUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
                 <ArrowRight className="h-4 w-4" /> View CV
               </a>
               <a href={linkedinUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
                 <Linkedin className="h-4 w-4" /> LinkedIn
+              </a>
+              <a href={githubUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
+                <Github className="h-4 w-4" /> GitHub
               </a>
               <a href={emailUrl} className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:bg-zinc-50">
                 <Mail className="h-4 w-4" /> Email
@@ -357,6 +361,7 @@ export default function Site() {
           <div className="text-sm text-zinc-500">© {new Date().getFullYear()} Andrew Grabarnick</div>
           <div className="flex items-center gap-3">
             <a href="https://www.linkedin.com/in/andrey-grabarnick" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-3 py-1.5 text-sm hover:bg-zinc-50"><Linkedin className="h-4 w-4" /> LinkedIn</a>
+            <a href="https://github.com/grabarnick" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-3 py-1.5 text-sm hover:bg-zinc-50"><Github className="h-4 w-4" /> GitHub</a>
             <a href="mailto:agrabarnick@gmail.com" className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-3 py-1.5 text-sm hover:bg-zinc-50"><Mail className="h-4 w-4" /> Email</a>
           </div>
         </div>
